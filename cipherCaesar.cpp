@@ -59,15 +59,10 @@ string decryptText(string cipherText, int offset)
 
 int main()
 {
-  string cipherText = "gluhtlishjrvbadvyyplkaohavbyjpwolypzavvdlhrvuuleatlzzhnlzdpajoavcpnlulyljpwolyrlfdvykpzaolopkkluzftivsvmklhaoputfmhcvypalovsilpuluk";
-  int offset = -19;
+  string text = "@bcD3 fghijk !mn0pqr stuVwx Yz";
+  int offset = 7;
 
-  // string text = "ABCDEFGHIJKLMNOPQRSTSUVWXYZ";
-  // string text = "abcdefghijklmnopqrstuvwxyz";
-  // string text = "@bcD3 fghijk !mn0pqr stuVwx Yz";
-  // int offset = 7;
-
-  // string cipherText = encryptText(text, offset);
-  // cout << "cipher text: " << cipherText << "\n";
+  string cipherText = encryptText(text, offset);
+  cout << "cipher text: " << cipherText << "\n";
   cout << "decipher text: " << decryptText(cipherText, offset) << "\n";
 }
