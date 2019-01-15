@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// string convertAsciiToChar(char ascii, int indexAlphaLower, int indexAlphaUpper, string cipherText)
 void convertAsciiToChar(char ascii, int indexAlphaLower, int indexAlphaUpper, string& cipherText)
 {
 
