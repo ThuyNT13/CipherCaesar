@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-string convertAsciiToChar(char ascii, int indexAlphaLower, int indexAlphaUpper, string cipherText)
+// string convertAsciiToChar(char ascii, int indexAlphaLower, int indexAlphaUpper, string cipherText)
+void convertAsciiToChar(char ascii, int indexAlphaLower, int indexAlphaUpper, string& cipherText)
 {
 
   if (isalpha(ascii))
@@ -21,8 +22,6 @@ string convertAsciiToChar(char ascii, int indexAlphaLower, int indexAlphaUpper, 
   {
     cipherText.push_back(ascii);
   }
-
-  return cipherText;
 }
 
 string encryptText(string plainText, int offset)
@@ -35,7 +34,7 @@ string encryptText(string plainText, int offset)
     int indexAlphaLower = (static_cast<int>(ascii) + 7 + offset) % 26;
     int indexAlphaUpper = (static_cast<int>(ascii) - 13 + offset) % 26;
 
-    cipherText = convertAsciiToChar(ascii, indexAlphaLower, indexAlphaUpper, cipherText);
+    convertAsciiToChar(ascii, indexAlphaLower, indexAlphaUpper, cipherText);
   }
 
   return cipherText;
@@ -51,7 +50,7 @@ string decryptText(string cipherText, int offset)
     int indexAlphaLower = (static_cast<int>(ascii) + 7 - offset) % 26;
     int indexAlphaUpper = (static_cast<int>(ascii) - 13 - offset) % 26;
 
-    decipherText = convertAsciiToChar(ascii, indexAlphaLower, indexAlphaUpper, decipherText);
+    convertAsciiToChar(ascii, indexAlphaLower, indexAlphaUpper, decipherText);
   }
 
   return decipherText;
